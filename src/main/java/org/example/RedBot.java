@@ -2,7 +2,7 @@ package org.example;
 
 public class RedBot extends BaseBot{
     public RedBot() {
-        super("RedBot");
+        super(Ansi.colorize("RedBot", Ansi.RED));
     }
 
     public int turn(BaseBot enemy) {

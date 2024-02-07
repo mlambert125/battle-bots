@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Hello world!
@@ -13,21 +13,21 @@ public class App
 
     public static void main( String[] args ) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Bot Arena!");
+        System.out.println(Ansi.colorize("Welcome to the Bot Arena!", Ansi.BLUE));
         System.out.println("Please select the first bot:");
         System.out.println("1. PlayerBot");
-        System.out.println("2. RedBot");
-        System.out.println("3. BlueBot");
-        System.out.println("4. YellowBot");
+        System.out.println(Ansi.colorize("2. RedBot", Ansi.RED));
+        System.out.println(Ansi.colorize("3. BlueBot", Ansi.BLUE));
+        System.out.println(Ansi.colorize("4. YellowBot", Ansi.YELLOW));
 
         int bot1 = scanner.nextInt();
         BaseBot player1 = getBot(bot1);
 
         System.out.println("Please select the second bot:");
         System.out.println("1. PlayerBot");
-        System.out.println("2. RedBot");
-        System.out.println("3. BlueBot");
-        System.out.println("4. YellowBot");
+        System.out.println(Ansi.colorize("2. RedBot", Ansi.RED));
+        System.out.println(Ansi.colorize("3. BlueBot", Ansi.BLUE));
+        System.out.println(Ansi.colorize("4. YellowBot", Ansi.YELLOW));
 
         int bot2 = scanner.nextInt();
         BaseBot player2 = getBot(bot2);

@@ -4,7 +4,7 @@ public class BlueBot extends BaseBot {
     public int defend_counter = 0;
 
     public BlueBot() {
-        super("BlueBot");
+        super(Ansi.colorize("BlueBot", Ansi.BLUE));
     }
 
     public int turn(BaseBot enemy) {

@@ -18,7 +18,7 @@ public class Arena {
 
             Random random = new Random();
 
-            System.out.println("============= Round " + round + " ==============");
+            System.out.println(Ansi.colorize("============= Round " + round + " ==============", Ansi.CYAN));
             if (random.nextBoolean()) {
                 processMove(player1Action, player1, player2, player2Action == BaseBot.DEFEND);
                 System.out.println("-------------------------------------");
@@ -53,7 +53,7 @@ public class Arena {
             case BaseBot.ATTACK:
                 System.out.println(source._getName() + " attacks " + target._getName() + "!");
 
-                if (random.nextInt(10) < 2) {
+                if (random.nextInt(10) < 1) {
                     System.out.println(source._getName() + " misses with their attack!");
                 } else {
                     int damage = random.nextInt(10);

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class YellowBot extends BaseBot {
     public YellowBot() {
-        super("YellowBot");
+        super(Ansi.colorize("YellowBot", Ansi.YELLOW));
     }
 
     public int turn(BaseBot enemy) {
