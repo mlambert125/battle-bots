@@ -12,6 +12,17 @@ public class App
     public static final double ROUND_DELAY = 1.0;
 
     public static void main( String[] args ) {
+        double turnDelay = TURN_DELAY;
+        double roundDelay = ROUND_DELAY;
+
+        if (args.length == 1) {
+            turnDelay = Double.parseDouble(args[0]);
+            roundDelay = turnDelay;
+        } else if (args.length == 2) {
+            turnDelay = Double.parseDouble(args[0]);
+            roundDelay = Double.parseDouble(args[1]);
+        }
+
         Scanner scanner = new Scanner(System.in);
         System.out.println(Ansi.colorize("Welcome to the Bot Arena!", Ansi.BLUE));
         System.out.println("Please select the first bot:");
@@ -32,7 +43,7 @@ public class App
         int bot2 = scanner.nextInt();
         BaseBot player2 = getBot(bot2);
 
-        Arena arena = new Arena(TURN_DELAY, ROUND_DELAY);
+        Arena arena = new Arena(turnDelay, roundDelay);
         try {
             arena.fight(player1, player2);
         } catch (InterruptedException e) {
