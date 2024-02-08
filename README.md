@@ -52,3 +52,24 @@ To run the simulation, open the App.java file and run it.  You will be prompted 
 will be displayed turn by turn, and the winner will be announced at the end.  If you want to speed up the simulation, you
 can change the `TURN_DELAY` and `APP_DELAY` variables in the `App` class to a smaller number of seconds.  (Zero will make
 the simulation run as fast as possible.)
+
+## Building and Running from the Terminal
+
+Scripts are provided to build and run the program from the terminal as well.  To build the program, run the `build.sh` 
+script.  To run the program, run the `run.sh` script.  When you call run.sh, you can optionally provide arguments for
+the delay timings.  If you provide one number, it is used for both delays.  If you provide two numbers, the first is used
+for the turn delay and the second is used for the round delay.  For example:
+
+To run with a 0.5 second turn delay and a 1 second round delay:
+
+```bash
+./run.sh 0.5 1
+```
+To run with a 0.5 second delay for both turns and rounds:
+
+```bash
+./run.sh 0.5
+```
+
+You may want to look at these scripts to see how the program is built and run from the terminal, and how you might do
+similar things with your own projects.
