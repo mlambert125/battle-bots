@@ -1,15 +1,38 @@
 package org.example;
 import java.util.*;
 
+/**
+ * This class represents an arena in which two bots can fight.
+ */
 public class Arena {
+    /**
+     * The delay between turns in seconds.
+     */
     private double turnDelay;
+
+    /**
+     * The delay between rounds in seconds.
+     */
     private double roundDelay;
 
+    /**
+     * Creates a new arena with the given turn and round delays.
+     *
+     * @param turnDelay the delay between turns in seconds
+     * @param roundDelay the delay between rounds in seconds
+     */
     public Arena(double turnDelay, double roundDelay) {
         this.turnDelay = turnDelay;
         this.roundDelay = roundDelay;
     }
 
+    /**
+     * Fights the two given bots against each other.
+     *
+     * @param player1 the first bot
+     * @param player2 the second bot
+     * @throws InterruptedException if the fight thread (main thread) is interrupted
+     */
     public void fight(BaseBot player1, BaseBot player2) throws InterruptedException {
         int round = 1;
         while (player1.getHealth() > 0 && player2.getHealth() > 0) {
@@ -44,6 +67,15 @@ public class Arena {
         System.out.println(winner._getName() + " wins, with " + winner.getHealth() + " health remaining!");
     }
 
+    /**
+     * Processes a move for a bot.
+     *
+     * @param action the action to perform
+     * @param source the bot performing the action
+     * @param target the bot being targeted
+     * @param targetDefending whether the target is defending
+     * @throws InterruptedException if the fight thread (main thread) is interrupted
+     */
     public void processMove(int action, BaseBot source, BaseBot target, boolean targetDefending) throws InterruptedException {
         Random random = new Random();
         switch (action) {
