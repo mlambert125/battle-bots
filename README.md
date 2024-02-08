@@ -46,3 +46,9 @@ example).
 You may not call any methods on your bot or the other bot if the method starts with an underscore.  These methods are
 only to be used by the arena class to orchestrate the fight.
 
+## Running the Simulation
+
+To run the simulation, open the App.java file and run it.  You will be prompted to choose two bots to battle.  The battle
+will be displayed turn by turn, and the winner will be announced at the end.  If you want to speed up the simulation, you
+can change the `TURN_DELAY` and `APP_DELAY` variables in the `App` class to a smaller number of seconds.  (Zero will make
+the simulation run as fast as possible.)
